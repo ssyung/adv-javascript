@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="width=device-width, initial scale=1.0">
+  <title>OpenCorporates API</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+</head>
+
+<body>
+  <header><h1>Build a Company Timeline</h1></header>
+
+  <section>
+
+    <form name="search" action="/search" id="CompanySearchForm">
+
+      
+      <input type="text" placeholder="Search Company Name" name="CompanyBox" id="CompanyBox">
+      
+      <div class="tab">
+        <select id="CountrySelect" name ="CountrySelect"></select> 
+        <select id="StateSelect" name ="StateSelect"></select>
+      </div>
+
+      <div class="tab state">
+      </div>
+
+      <div>
+      <button class="button" type="submit" id="CompanySearch">BUILD</button>
+      </div>
+
+    </form>
+
+  </section>
+
+  <div id="results"></div>
+  <div id="output"></div>
+
+  <!-- EMBED TIMELINE JS -->
+  <div id='timeline-embed' style="width: 100%; height: 600px"></div>
+
+
+  <script type= "text/javascript" src = "js/countries.js"></script>
+  <script type= "text/javascript" src = "js/states.js"></script>
+  <script language=javascript> 
+    populateCountries("CountrySelect");
+    populateStates("StateSelect");
+  </script>
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
+
